@@ -15,8 +15,7 @@ alias dev='cd ~/Development'
 alias removeDS='find . -type f -name ".DS_Store" -exec rm {} \;'
 
 # Project directories
-alias myada='cd ~/Development/myada'
-alias const='cd ~/Development/constellation'
+alias ngc='cd ~/Development/natgeo/channel/'
 
 # git commamands simplified
 alias gst='git status'
@@ -26,6 +25,10 @@ alias grb='git rebase'
 alias gbr='git branch'
 alias glg='git log --date-order --all --graph --format="%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
 alias glg2='git log --date-order --all --graph --name-status --format="%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
+
+# Tomcat
+alias start_tomcat='/usr/local/Cellar/tomcat/7.0.47/libexec/bin/startup.sh'
+alias stop_tomcat='/usr/local/Cellar/tomcat/7.0.47/libexec/bin/shutdown.sh'
 
 # lock computer
 alias lock='/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend'
@@ -41,11 +44,15 @@ alias ip2="curl -s http://www.showmyip.com/simple/ | awk '{print $1}'"
 alias grep='grep --color=auto'
 
 # refresh shell
-alias reload='source ~/.profile'
+alias reload='source ~/.bash_profile'
 
 # processes
 #alias ps='ps -ax'
 
+# Vagrant
+alias vussh='vagrant up && vagrant ssh'
+
+function mkdircd () { mkdir -p "$@" && eval cd "\"\$$#\""; }
 
 ###########################
 # ENVIRONMENT VARIABLES
@@ -55,16 +62,12 @@ alias reload='source ~/.profile'
 BIN_LOCAL='~/bin'
 export PATH=${PATH}:${BIN_LOCAL}
 
-# ANT
-export ANT_HOME="/usr/share/java/ant-1.8.2"
-export ANT_OPTS="-Xms256m -Xmx512m"
-
 # Java
 JAVA_HOME='/Library/Java/Home'
 export PATH=${PATH}:${JAVA_HOME}/bin
 
 # Maven
-export M3_HOME='/usr/local/Cellar/maven/3.0.5/libexec'
+export M3_HOME='/usr/local/Cellar/maven/3.2.1/libexec'
 export M3=${M3_HOME}/bin
 export MAVEN_OPTS='-Xms1024m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m'
 export PATH=${PATH}:${M3}
@@ -81,6 +84,12 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Development
 source /usr/local/bin/virtualenvwrapper.sh
 
+# LESSC instead of the ruby version
+export lessc=/usr/local/share/npm/bin/lessc
+
+# nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 eval "$(grunt --completion=bash)"
 
