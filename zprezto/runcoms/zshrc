@@ -38,9 +38,10 @@ alias mux="tmuxinator"
 alias weather="curl wttr.in"
 alias k="kubectl"
 
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+# zsh-history-substring-search completition
+source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-# fzf command line completion
+# fzf command line completition
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # gitignore.io
@@ -49,12 +50,12 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 source ~/bin/tmuxinator.zsh
 
 # Google Cloud
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
-source '/usr/local/etc/profile.d/z.sh'
+# not sure
+# source '/usr/local/etc/profile.d/z.sh'
 
-source '/usr/local/etc/bash_completion.d/az'
+# source '/usr/local/etc/bash_completion.d/az'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
