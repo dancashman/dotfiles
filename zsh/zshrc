@@ -1,0 +1,51 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+# echo "Updating configuration"
+# #(cd ~/dotfiles && time_out 3 git pull && time_out 3 git submodule update --init --recursive)
+# (cd ~/dotfiles && git pull && git submodule update --init --recursive)
+
+autoload -Uz compinit
+compinit
+
+export ZSH=$HOME/code/dotfiles/zsh
+export HISTFILE=$HOME/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+source $ZSH/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#================ Path Information ===================
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export GOPRIVATE=github.com/CoverWhale
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/bin
+export PATH=$GOBIN:$PATH
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+
+source ~/code/dotfiles/zsh/functions.sh
+source ~/code/dotfiles/zsh/keybindings.sh
+source <(kubectl completion zsh)
+
+alias k=kubectl
+alias ls='ls -G'
+alias vim="nvim"
+
+eval "$(/opt/homebrew/bin/starship init zsh)"
+
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+eval "$(atuin init zsh)"

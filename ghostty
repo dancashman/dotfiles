@@ -1,0 +1,21 @@
+## Window
+macos-window-shadow = false
+
+## Theme
+theme = Ayu Mirage
+font-family = JetBrains Mono
+
+## Keybindings
+keybind = ctrl+p>s>v=new_split:right
+keybind = ctrl+p>s>h=new_split:down
+keybind = ctrl+p>h=goto_split:left
+keybind = ctrl+p>l=goto_split:right
+keybind = ctrl+p>j=goto_split:bottom
+keybind = ctrl+p>k=goto_split:top
+keybind = ctrl+p>r>h=resize_split:left,50
+keybind = ctrl+p>r>l=resize_split:right,50
+keybind = ctrl+p>r>j=resize_split:down,50
+keybind = ctrl+p>r>k=resize_split:up,50
+keybind = ctrl+t>n=new_tab
+keybind = ctrl+t>l=next_tab
+keybind = ctrl+t>h=previous_tab
