@@ -882,11 +882,13 @@ require('lazy').setup({
           end
 
           if not vim.tbl_contains(require('nvim-treesitter').get_installed(), lang) then
-            require('nvim-treesitter').install { lang }
+            require('nvim-treesitter').install({ lang }):wait(300000)
           end
 
-          vim.treesitter.start()
-          vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          local ok = pcall(vim.treesitter.start)
+          if ok then
+            vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
         end,
       })
 
