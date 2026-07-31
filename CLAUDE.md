@@ -13,7 +13,9 @@ Run the setup script from the repo root to create symlinks and config directorie
 This script:
 - Creates `~/.config/{zellij,alacritty,ghostty}` directories
 - Copies `starship.toml` to `~/.config/starship.toml`
-- Symlinks configs to their expected system locations (zshrc, nvim, alacritty, wezterm, ghostty, zellij, hyper)
+- Symlinks configs to their expected system locations (zshrc, nvim, alacritty, wezterm, ghostty, zellij, hyper, aerospace, gitconfig)
+
+Note: `git/.gitconfig` is symlinked to `~/.gitconfig` by `setup.sh` — always run `setup.sh` on a new machine before committing, otherwise git falls back to a machine-derived author (`user@hostname`) instead of the configured identity.
 
 There is no Makefile, no build system, and no test suite.
 
