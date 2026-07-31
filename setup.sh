@@ -12,3 +12,4 @@ ln -sf $(pwd)/alacritty.yml ~/.config/alacritty/alacritty.yml
 ln -sf $(pwd)/wezterm.lua ~/.wezterm.lua
 ln -sf $(pwd)/aerospace.toml ~/.aerospace.toml
 ln -sf $(pwd)/ghostty ~/.config/ghostty/config
+ln -sf $(pwd)/git/.gitconfig ~/.gitconfig
