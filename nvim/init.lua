@@ -864,18 +864,31 @@ require('lazy').setup({
 
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
+    lazy = false,
     build = ':TSUpdate',
     config = function()
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+      local ensure_installed = { 'bash', 'c', 'go', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'v', 'zig' }
+      require('nvim-treesitter').install(ensure_installed)
 
-      ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup {
-        ensure_installed = { 'bash', 'c', 'go', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'v', 'zig' },
-        -- Autoinstall languages that are not installed
-        auto_install = true,
-        highlight = { enable = true },
-        indent = { enable = true },
-      }
+      -- Enable highlighting and indentation per filetype, auto-installing
+      -- the parser first if it isn't already available.
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function(args)
+          local lang = vim.treesitter.language.get_lang(args.match) or args.match
+          if not vim.tbl_contains(require('nvim-treesitter').get_available(), lang) then
+            return
+          end
+
+          if not vim.tbl_contains(require('nvim-treesitter').get_installed(), lang) then
+            require('nvim-treesitter').install { lang }
+          end
+
+          vim.treesitter.start()
+          vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end,
+      })
 
       -- There are additional nvim-treesitter modules that you can use to interact
       -- with nvim-treesitter. You should go explore a few and see what interests you:
