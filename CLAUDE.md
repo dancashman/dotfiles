@@ -29,7 +29,7 @@ This is a personal dotfiles repo managed via a manual symlink script (no GNU Sto
 | `zsh/zshrc` | Main zsh config — sources `functions.sh` and `keybindings.sh` from same dir |
 | `zsh/plugins/` | Git-tracked zsh plugins (autosuggestions, syntax-highlighting, kube-ps1) |
 | `nvim/` | Neovim config based on Kickstart.nvim, using lazy.nvim for plugins |
-| `nvim/lua/custom/plugins/` | User-added plugin configs (catppuccin, neo-tree, trouble, wakatime, etc.) |
+| `nvim/lua/custom/plugins/` | User-added plugin configs (catppuccin, neo-tree, trouble, etc.) |
 | `git/.gitconfig` | Global git config for Dan Cashman (djcashman@gmail.com) |
 | `tmux/` | Tmux config with platform-specific keybinding files (mac/ubuntu/rhel) |
 | `zellij.kdl` | Zellij multiplexer config with fully custom keybindings |

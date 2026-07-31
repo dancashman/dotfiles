@@ -87,7 +87,7 @@ Within each mode, `h/n/e/i` = left/down/up/right. Additional pane bindings:
 
 Managed by [lazy.nvim](https://github.com/folke/lazy.nvim). Custom plugins live in `nvim/lua/custom/plugins/` — add a `.lua` file returning a lazy spec to install anything new.
 
-Key plugins: catppuccin · neo-tree · telescope · treesitter · nvim-cmp · nvim-lspconfig · Mason · conform · gitsigns · trouble · wakatime · which-key
+Key plugins: catppuccin · neo-tree · telescope · treesitter · nvim-cmp · nvim-lspconfig · Mason · conform · gitsigns · trouble · which-key
 
 ## Zsh plugins
 
