@@ -34,7 +34,7 @@ source <(kubectl completion zsh)
 alias k=kubectl
 alias ls='ls -G'
 alias vim="nvim"
-
+alias ll='ls -al'
 eval "$(/opt/homebrew/bin/starship init zsh)"
 
 
