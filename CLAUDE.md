@@ -11,9 +11,9 @@ Run the setup script from the repo root to create symlinks and config directorie
 ```
 
 This script:
-- Creates `~/.config/{zellij,alacritty,ghostty}` directories
+- Creates `~/.config/{zellij,alacritty,ghostty}` and `~/.claude` directories
 - Copies `starship.toml` to `~/.config/starship.toml`
-- Symlinks configs to their expected system locations (zshrc, nvim, alacritty, wezterm, ghostty, zellij, hyper, aerospace, gitconfig)
+- Symlinks configs to their expected system locations (zshrc, nvim, alacritty, wezterm, ghostty, zellij, hyper, aerospace, gitconfig, claude statusline)
 
 Note: `git/.gitconfig` is symlinked to `~/.gitconfig` by `setup.sh` — always run `setup.sh` on a new machine before committing, otherwise git falls back to a machine-derived author (`user@hostname`) instead of the configured identity.
 
@@ -31,6 +31,7 @@ This is a personal dotfiles repo managed via a manual symlink script (no GNU Sto
 | `nvim/` | Neovim config based on Kickstart.nvim, using lazy.nvim for plugins |
 | `nvim/lua/custom/plugins/` | User-added plugin configs (catppuccin, neo-tree, trouble, etc.) |
 | `git/.gitconfig` | Global git config for Dan Cashman (djcashman@gmail.com) |
+| `claude/statusline.sh` | Claude Code statusline script, symlinked to `~/.claude/statusline.sh` |
 | `tmux/` | Tmux config with platform-specific keybinding files (mac/ubuntu/rhel) |
 | `zellij.kdl` | Zellij multiplexer config with fully custom keybindings |
 | `ghostty` | Ghostty terminal config (Ayu Mirage theme, JetBrains Mono font) |

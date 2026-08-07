@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 mkdir -p ~/.config/{zellij,alacritty,ghostty}
+mkdir -p ~/.claude
 
 cp starship.toml ~/.config/starship.toml
 
@@ -13,3 +14,4 @@ ln -sf $(pwd)/wezterm.lua ~/.wezterm.lua
 ln -sf $(pwd)/aerospace.toml ~/.aerospace.toml
 ln -sf $(pwd)/ghostty ~/.config/ghostty/config
 ln -sf $(pwd)/git/.gitconfig ~/.gitconfig
+ln -sf $(pwd)/claude/statusline.sh ~/.claude/statusline.sh
