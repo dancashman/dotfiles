@@ -35,6 +35,11 @@ alias k=kubectl
 alias ls='ls -G'
 alias vim="nvim"
 alias ll='ls -al'
+
+# Default editor, matching the `vim` -> nvim alias above.
+export EDITOR=nvim
+export VISUAL=nvim
+
 eval "$(/opt/homebrew/bin/starship init zsh)"
 
 
