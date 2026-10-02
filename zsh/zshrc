@@ -35,6 +35,7 @@ alias k=kubectl
 alias ls='ls -G'
 alias vim="nvim"
 alias ll='ls -al'
+alias cr=coderabbit
 
 # Default editor, matching the `vim` -> nvim alias above.
 export EDITOR=nvim
